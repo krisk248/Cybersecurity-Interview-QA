@@ -854,8 +854,7 @@ These security engineering challenges focus on text parsing and manipulation, ba
 - Malware signatures
 	- A program that looks for malware signatures in binaries and code samples.
 	- Look at Yara rules for examples.
-
-Put your work-in-progress scripts on GitHub and link to them on your resume/CV. Resist the urge to make your scripts perfect or complete before doing this. 
+ 
 
 
 ### By [nolang](https://twitter.com/__nolang)
