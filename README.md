@@ -23,7 +23,9 @@
 - [Cyber_Security_Interview_Questions](#cyber_security_interview_questions)
 
 
+# Cyber Secuirty Job Roles
 
+![image](./Cyber_Security_Job_Roles.png)
 
 # To-Do
 - [ ] Add answers to questions
