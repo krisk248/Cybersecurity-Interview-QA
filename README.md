@@ -701,8 +701,7 @@ Practice describing security concepts in the context of an attack. These categor
 	- Wireshark.
 	- Zeek.
 
-- A curated list of [awesome threat detection](https://github.com/0x4D31/awesome-threat-detection) resources
-
+- **A curated list of** [awesome threat detection](https://github.com/0x4D31/awesome-threat-detection) **resources**
 
 # Digital Forensics
 
