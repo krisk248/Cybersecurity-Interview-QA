@@ -142,6 +142,8 @@
 
 ## Interviewers are potential friends and they want to help you get the job, they are on your side. Let them help you, ask them questions, recite everything you know on a topic and *say your thought process out loud*.
 
+# Basic Concepts for CyberSecurity
+----------------
 
 # Networking 
 
@@ -890,24 +892,156 @@ Some basic questions that are very fundamental in nature, are directly or someti
 These help establish some baseline, and everytime when one of these questions are asked, try to align the answer to Cyber Security.
 Also, when answering these, try not to miss the basic points, often the interviewer might want to hear some particular keyword, so dont rush on hearing a easy question, gather yourself and the answer and answer it.
 
-1. What is Cyber Kill Chain.
-2. How can you classfy the roles in Cyber Security ? What is your understanding of different job roles and functions that are part of Cyber Security ?
-3. What is the CIA triangle?
-4. What’s the difference between symmetric and asymmetric (public-key) cryptography?
-5. What are Ports in Computers, how many ports a computer has ?
-1. Why is deleted data not truly gone when you delete it?
-1. What is Encryption, Encoding, Hashing ?
-1. What is Salting (in context of Hashing), and why it is used ?
-1. Would you Encrypt and Compress or Compress and Encrypt ? Why ?
-1. What’s the difference between deep web and dark web?
-1. What is MITRE ATT&CK?
-1. Explain/differentiate Vulnerability and Exploit
-1. Explain Vulnerability, Threat and Risk.
-1. What is difference in VA and PT ?
-1. What is Diffrence Between Events, Alerts & Incidents ?
-1. What is APT Groups ( in Cyber Security Context ) ?
-2. Any experience on working with any Ticketing tools ? 
+1. ### What is Cyber Kill Chain?
 
+    The Cyber Kill Chain is a framework developed by Lockheed Martin that outlines the stages of a cyberattack. It helps in understanding and responding to cyber threats. The Cyber Kill Chain consists of the following steps:
+
+    1. **Reconnaissance:** The attacker gathers information about the target.
+    2. **Weaponization:** The attacker creates a deliverable payload (e.g., malware).
+    3. **Delivery:** The attacker sends the payload to the target (e.g., phishing email).
+    4. **Exploitation:** The payload exploits a vulnerability in the target system.
+    5. **Installation:** The payload installs a backdoor or other persistent access.
+    6. **Command and Control (C2):** The attacker establishes a remote control channel.
+    7. **Actions on Objectives:** The attacker performs their intended actions, such as data exfiltration or destruction.
+
+2. ### How can you classify the roles in Cyber Security?
+
+    Cybersecurity roles can be classified into several categories based on their functions:
+
+    1. **Security Management:**
+        - Chief Information Security Officer (CISO)
+        - IT Security Manager
+
+    2. **Security Engineering:**
+        - Security Architect
+        - Security Engineer
+
+    3. **Security Operations:**
+        - Security Analyst
+        - Security Operations Center (SOC) Analyst
+        - Incident Responder
+
+    4. **Compliance and Auditing:**
+        - IT Auditor
+        - Compliance Manager
+
+    5. **Penetration Testing and Red Teaming:**
+        - Penetration Tester
+        - Red Team Specialist
+
+    6. **Forensics and Investigations:**
+        - Digital Forensics Analyst
+        - Cyber Crime Investigator
+
+    7. **Risk Management and Policy:**
+        - Risk Analyst
+        - Security Policy Analyst
+
+    8. **Identity and Access Management (IAM):**
+        - IAM Specialist
+        - Access Control Analyst
+
+    9. **Application Security:**
+        - Application Security Engineer
+        - DevSecOps Engineer
+
+3. ### What is the CIA Triangle?
+
+    The CIA Triangle, also known as the CIA Triad, is a fundamental model in information security that focuses on three core principles:
+
+    1. **Confidentiality:** Ensuring that information is not disclosed to unauthorized individuals or systems.
+    2. **Integrity:** Ensuring that information is accurate and has not been tampered with or altered by unauthorized parties.
+    3. **Availability:** Ensuring that information and resources are accessible to authorized users when needed.
+
+4. ### What’s the difference between symmetric and asymmetric (public-key) cryptography?
+
+    **Symmetric Cryptography:**
+    - Uses the same key for both encryption and decryption.
+    - Faster and less computationally intensive.
+    - Key distribution and management can be challenging because both parties need to securely share the same key.
+    - Examples: AES (Advanced Encryption Standard), DES (Data Encryption Standard).
+
+    **Asymmetric Cryptography:**
+    - Uses a pair of keys: a public key for encryption and a private key for decryption.
+    - More secure for key distribution since the public key can be shared openly.
+    - Slower and more computationally intensive compared to symmetric cryptography.
+    - Examples: RSA (Rivest-Shamir-Adleman), ECC (Elliptic Curve Cryptography).
+
+5. ### What are Ports in Computers, how many ports does a computer have?
+
+    **Ports in Computers:**
+    - Ports are communication endpoints in computer networking used to distinguish between different services or processes running on a networked device.
+    - A port is identified by a number, ranging from 0 to 65535, with some ports designated for specific services (e.g., port 80 for HTTP, port 443 for HTTPS).
+
+    **Number of Ports:**
+    - There are a total of 65,536 ports (numbered 0 to 65535).
+    - Ports 0 to 1023 are known as well-known ports and are typically reserved for system or well-known services.
+    - Ports 1024 to 49151 are registered ports, often used for specific services and applications.
+    - Ports 49152 to 65535 are dynamic or private ports, usually assigned temporarily for client-side communication.
+6. ### Why is deleted data not truly gone when you delete it?
+
+    When you delete data, the operating system removes the reference to the data on the disk, making it no longer accessible to the user. However, the actual data remains on the disk until it is overwritten by new data. This means that with specialized software, it is often possible to recover deleted data.
+
+7. ### What is Encryption, Encoding, Hashing?
+
+    - **Encryption:** The process of converting data into a coded form to prevent unauthorized access. It requires a key to encrypt and decrypt the data. Examples: AES, RSA.
+    - **Encoding:** The process of converting data into a different format using a scheme that is publicly available. Encoding is used to ensure data is properly formatted for transmission or storage. Examples: Base64, URL encoding.
+    - **Hashing:** The process of converting data into a fixed-size string of characters, which is typically a hash code. Hashing is a one-way process used for data integrity and password storage. Examples: MD5, SHA-256.
+
+8. ### What is Salting (in context of Hashing), and why it is used?
+
+    Salting is the process of adding a unique, random value to each password before it is hashed. This is done to ensure that even if two users have the same password, their hashes will be different. Salting helps to defend against dictionary attacks and rainbow table attacks.
+
+9. ### Would you Encrypt and Compress or Compress and Encrypt? Why?
+
+    It is generally better to **compress before encrypting**. Compressing data reduces its size, making the encryption process faster and more efficient. Additionally, encrypted data often appears random and does not compress well, so compressing after encryption would not be effective.
+
+10. ### What’s the difference between deep web and dark web?
+
+    - **Deep Web:** Refers to parts of the internet not indexed by standard search engines. This includes private databases, internal company sites, and medical records. It is not inherently malicious.
+    - **Dark Web:** A subset of the deep web that is intentionally hidden and accessible only with specific software such as Tor. It is often associated with illegal activities.
+
+11. ### What is MITRE ATT&CK?
+
+    MITRE ATT&CK (Adversarial Tactics, Techniques, and Common Knowledge) is a globally accessible knowledge base of adversary tactics and techniques based on real-world observations. It is used as a foundation for the development of specific threat models and methodologies in the private sector, government, and the cybersecurity product and service community.
+
+12. ### Explain/differentiate Vulnerability and Exploit
+
+    - **Vulnerability:** A weakness or flaw in a system that can be exploited to compromise the system's security.
+    - **Exploit:** A piece of software, code, or sequence of commands that takes advantage of a vulnerability to cause unintended behavior, typically gaining unauthorized access.
+
+13. ### Explain Vulnerability, Threat, and Risk
+
+    - **Vulnerability:** A weakness in a system that can be exploited.
+    - **Threat:** A potential cause of an unwanted impact to a system or organization.
+    - **Risk:** The potential for loss or damage when a threat exploits a vulnerability. It is often assessed as the combination of the likelihood of the threat occurring and the impact it would have.
+
+14. ### What is the difference in VA and PT?
+
+    - **VA (Vulnerability Assessment):** The process of identifying and prioritizing vulnerabilities in a system. It focuses on discovering vulnerabilities without exploiting them.
+    - **PT (Penetration Testing):** A simulated cyber attack against a system to identify and exploit vulnerabilities. It goes beyond identifying vulnerabilities by attempting to exploit them to assess the security of the system.
+
+15. ### What is the difference between Events, Alerts, and Incidents?
+
+    - **Event:** Any observable occurrence in a system or network. Not all events indicate a security issue.
+    - **Alert:** A notification or warning generated by a security system when an event or a combination of events indicates a potential security issue.
+    - **Incident:** A confirmed security breach or compromise that requires response and remediation.
+
+16. ### What are APT Groups (in Cyber Security Context)?
+
+    APT (Advanced Persistent Threat) groups are sophisticated, well-funded, and skilled adversaries who conduct prolonged and targeted cyberattacks. These groups typically have specific objectives, such as espionage or sabotage, and use a variety of techniques to gain and maintain access to targeted networks.
+
+17. ### Any experience working with any Ticketing tools?
+
+    Ticketing tools are used for managing and tracking incidents, service requests, and other tasks. Some commonly used ticketing tools in cybersecurity include:
+    - **Jira**
+    - **ServiceNow**
+    - **Zendesk**
+    - **Remedy**
+    - **RT (Request Tracker)**
+    - **Freshservice**
+
+    Personal experience with these tools may vary, and they are often used to ensure that incidents and tasks are properly logged, assigned, and resolved in an organized manner.
 
 ----------
 
