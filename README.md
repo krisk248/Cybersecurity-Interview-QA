@@ -1485,11 +1485,80 @@ More questions based on some experience  coming here soon. As Cyber Sec Intervie
 
 These are totally random questions, makes less sense to judge on ( personal Opinion* ), but just for the sake of interaction sometimes you can hear these. I hope people dont represent the *Illuminati*  view here, and be moderate or balanced in answering. 
 
-1. Security is fast moving field. How do you keep yourself updated.
-2. What is your understanding of Insider Threats ? how to detect ?
-3. Social Media websites such as Instagram and Linkedin are ok to use at workplace ? Why ? or not ?
-4. iOS is more secure compared to Android ?
-5. Are you a Linux user or Windows ? Which is more secure ? Why you think so ?
-6. What is Dark Web, and how is it different compared to Deep Web?
+1. ### Security is a fast-moving field. How do you keep yourself updated?
+
+    To keep updated in the fast-moving field of security, I:
+    - Regularly read industry news from sources like Krebs on Security, Dark Reading, and SecurityWeek.
+    - Follow cybersecurity experts and organizations on social media.
+    - Participate in online forums and communities such as Reddit's /r/netsec and Stack Exchange.
+    - Attend webinars, conferences, and workshops.
+    - Enroll in ongoing education and certification courses.
+    - Subscribe to threat intelligence feeds and newsletters.
+
+2. ### What is your understanding of Insider Threats? How to detect them?
+
+    **Insider threats** are security risks that originate from within the organization. These can be current or former employees, contractors, or business partners who have access to the organization's network, systems, or data.
+
+    **Detection Methods:**
+    - Monitoring user behavior for anomalies.
+    - Implementing strict access controls and least privilege policies.
+    - Using Data Loss Prevention (DLP) tools.
+    - Conducting regular audits and reviews of access logs.
+    - Encouraging a culture of security awareness among employees.
+
+3. ### Social Media websites such as Instagram and LinkedIn are ok to use at the workplace? Why or why not?
+
+    **Pros:**
+    - LinkedIn can be useful for networking, recruitment, and professional development.
+    - Social media can serve as a marketing tool and enhance the company's online presence.
+
+    **Cons:**
+    - Potential for decreased productivity if used for personal purposes.
+    - Risk of data leakage or exposure to social engineering attacks.
+    - Increased vulnerability to phishing and malware.
+
+    The appropriateness of using social media at work depends on the company's policy, the role of the employee, and the potential security risks.
+
+4. ### Is iOS more secure compared to Android?
+
+    **iOS:**
+    - Generally considered more secure due to Apple's stringent app review process and closed ecosystem.
+    - Regular updates and patches are pushed directly to users.
+    - Stronger default privacy settings and data encryption.
+
+    **Android:**
+    - Open-source nature and broader device manufacturer base lead to fragmentation and inconsistent security updates.
+    - Users have more flexibility but also more exposure to risks from third-party app stores and customizations.
+
+    While iOS is often deemed more secure, both platforms can be secure if users follow best practices and maintain updated systems.
+
+5. ### Are you a Linux user or Windows? Which is more secure? Why do you think so?
+
+    **Linux:**
+    - Preferred by many for its open-source nature and customization options.
+    - Often considered more secure due to its Unix-based architecture and user permission management.
+    - Less targeted by malware compared to Windows, but not immune.
+
+    **Windows:**
+    - Widely used, making it a more common target for attackers.
+    - Regular updates and security features like Windows Defender improve its security.
+    - User-friendly and widely supported by applications.
+
+    Security largely depends on the user's knowledge, how the system is configured, and the security practices followed rather than the operating system itself.
+
+6. ### What is the Dark Web, and how is it different compared to the Deep Web?
+
+    **Deep Web:**
+    - Refers to parts of the internet not indexed by standard search engines.
+    - Includes private databases, academic journals, internal company websites, and other restricted-access content.
+    - Not inherently malicious or illegal.
+
+    **Dark Web:**
+    - A subset of the deep web intentionally hidden and accessible only through specific software such as Tor.
+    - Often associated with illegal activities, including marketplaces for illicit goods, hacking services, and forums.
+    - Provides anonymity to users, which can be used for both legitimate and illegal purposes.
+
+    The key difference is that the deep web encompasses all unindexed web content, while the dark web specifically refers to hidden, often anonymized sections typically used for activities requiring privacy.
+
 
 
