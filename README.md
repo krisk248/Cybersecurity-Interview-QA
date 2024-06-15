@@ -1050,40 +1050,182 @@ Also, when answering these, try not to miss the basic points, often the intervie
 Questions around Networks and devices are important as this is very intrinsic part of any security setup.
 I will again repeat this - while the questions are very very basic, be prepared for follow up questions. These questions are just initiators, the actual question will the follow up question on which you will be judged. 
 
-1. What is traceroute and how do you use it ?
-2. What is SSH ? on What port does SSH works ?
-3. Can you do SSH from Windows ?
-1. Why is DNS Monitoring Important ? What information can it reveal ?
-2. DNS Communication Happens on which port ?
-1. What is VPN?
-1. What is Proxy
-1. What is Difference in VPN and Proxy ?
-1. What is Forward Proxy and Reverse Proxy?
-1. What is a Load Balancer?
-1. What is CDN ?
-1. Can you explain man-in-the middle attack?
-1. Does HTTPS/SSL protects from Man-in-the-Middle Attack ?
-1. What is difference in IPS and IDS ?
-1 What are different OSI Layers in Networking
-1. How is TCP/IP Layer Different from OSI Layers in Networking?
-1. Do you prefer filtered ports or closed ports on your firewall?
-1. What is a firewall? What are different types of Firewall ?
-1. How can you bypass firewall? or IDS ?
-1. What is Fragmentation attack ?
-1. How can Fragmentation be used as DoS Attack ? How can this be avoided or handled ?
-1. Besides firewalls, what other devices are used to enforce network boundaries?
-1. What is a honeypot?
-1. What is the difference between an HIDS and a NIDS? Exmaples of both.
-1. What is worse in detection, a false negative or a false positive? And why? 
-1. What is DDoS and DoS attack ?
-1. What do you understand by IP Subnetting ?
-1. Explain NAT (Network Address Translation) ?
-1. What is Port Forwarding ? and how/why it is used ?
-1. What is VLAN ?
-1. What Security Principle means a signed message came from the owner of key that signed it ? (non-repundiation, Integrity, authority, -non-verifiability)
-1. What is ARP Poisoning ?
+1. ### What is traceroute and how do you use it?
 
-----
+    Traceroute is a network diagnostic tool used to track the pathway that packets take from one computer to another. It helps to identify the route and measure transit delays of packets across an IP network.
+
+    **Usage:**
+    - On Windows: Open Command Prompt and type `tracert [hostname or IP]`.
+    - On Linux/Mac: Open Terminal and type `traceroute [hostname or IP]`.
+
+2. ### What is SSH? On what port does SSH work?
+
+    SSH (Secure Shell) is a protocol used to securely log into and execute commands on remote machines. It provides encrypted communication over an insecure network.
+
+    **Port:** SSH typically operates on port 22.
+
+3. ### Can you do SSH from Windows?
+
+    Yes, you can use SSH from Windows. Tools such as PuTTY, OpenSSH (built into Windows 10 and later), and other third-party applications allow SSH connections from Windows.
+
+4. ### Why is DNS Monitoring Important? What information can it reveal?
+
+    DNS monitoring is crucial for ensuring the health and security of DNS infrastructure. It helps in detecting issues such as downtime, misconfigurations, and malicious activities.
+
+    **Reveals:**
+    - Unusual traffic patterns indicating potential DDoS attacks.
+    - Signs of DNS cache poisoning or spoofing.
+    - Performance issues and delays in DNS resolution.
+    - Unauthorized changes to DNS records.
+
+5. ### DNS Communication Happens on which port?
+
+    DNS communication typically happens on port 53.
+
+6. ### What is VPN?
+
+    A VPN (Virtual Private Network) extends a private network across a public network, allowing users to send and receive data as if their devices were directly connected to the private network. It provides security, anonymity, and access to restricted resources.
+
+7. ### What is Proxy?
+
+    A proxy server acts as an intermediary between a client and the server from which the client is requesting a service. It can provide various functions like caching, filtering, and anonymizing.
+
+8. ### What is the difference between VPN and Proxy?
+
+    - **VPN:** Encrypts all network traffic between the user's device and the VPN server, providing privacy and security for all online activities.
+    - **Proxy:** Intermediates specific types of traffic (e.g., HTTP/HTTPS) and can anonymize or cache requests but typically does not encrypt all traffic.
+
+9. ### What is Forward Proxy and Reverse Proxy?
+
+    - **Forward Proxy:** Acts on behalf of clients, fetching resources from the internet on their behalf.
+    - **Reverse Proxy:** Acts on behalf of servers, handling requests from clients on behalf of the servers.
+
+10. ### What is a Load Balancer?
+
+    A load balancer distributes network or application traffic across multiple servers to ensure no single server becomes overwhelmed. It enhances the availability and reliability of applications.
+
+11. ### What is CDN?
+
+    A CDN (Content Delivery Network) is a network of servers distributed globally to deliver content more efficiently to users. It caches content closer to the end-users to reduce latency and improve load times.
+
+12. ### Can you explain man-in-the-middle attack?
+
+    A man-in-the-middle (MitM) attack occurs when an attacker intercepts and potentially alters communication between two parties who believe they are directly communicating with each other.
+
+13. ### Does HTTPS/SSL protect from Man-in-the-Middle Attack?
+
+    Yes, HTTPS/SSL helps protect against MitM attacks by encrypting the communication between the client and server, ensuring data integrity and authenticity.
+
+14. ### What is the difference between IPS and IDS?
+
+    - **IDS (Intrusion Detection System):** Monitors network traffic for suspicious activity and alerts administrators.
+    - **IPS (Intrusion Prevention System):** Monitors and actively prevents/block suspicious activities.
+
+15. ### What are different OSI Layers in Networking?
+
+    The OSI model has seven layers:
+    1. Physical Layer
+    2. Data Link Layer
+    3. Network Layer
+    4. Transport Layer
+    5. Session Layer
+    6. Presentation Layer
+    7. Application Layer
+
+16. ### How is TCP/IP Layer Different from OSI Layers in Networking?
+
+    The TCP/IP model has four layers, which correspond to the OSI model's layers:
+    1. Network Interface Layer (OSI: Physical and Data Link)
+    2. Internet Layer (OSI: Network)
+    3. Transport Layer (OSI: Transport)
+    4. Application Layer (OSI: Session, Presentation, and Application)
+
+17. ### Do you prefer filtered ports or closed ports on your firewall?
+
+    **Filtered ports** are preferable because they do not respond to probes, making it harder for attackers to detect the presence of services, thereby reducing the attack surface.
+
+18. ### What is a firewall? What are different types of Firewall?
+
+    A firewall is a security device that monitors and controls incoming and outgoing network traffic based on predetermined security rules.
+
+    **Types:**
+    - Packet-Filtering Firewall
+    - Stateful Inspection Firewall
+    - Proxy Firewall
+    - Next-Generation Firewall (NGFW)
+    - Network Address Translation (NAT) Firewall
+
+19. ### How can you bypass a firewall or IDS?
+
+    Techniques to bypass firewalls or IDS include:
+    - Using encrypted tunnels (e.g., VPN, SSH)
+    - Steganography
+    - Fragmenting packets
+    - Tunneling protocols through allowed ports (e.g., HTTP, HTTPS)
+
+20. ### What is Fragmentation attack?
+
+    A fragmentation attack involves sending fragmented packets to a target in an attempt to bypass security mechanisms that inspect packets for malicious content.
+
+21. ### How can Fragmentation be used as a DoS Attack? How can this be avoided or handled?
+
+    Fragmentation attacks can overwhelm a target's resources by sending numerous fragmented packets, causing the system to consume resources to reassemble them.
+
+    **Mitigation:**
+    - Implementing fragmentation reassembly timeouts.
+    - Using advanced firewalls and IDS/IPS to detect and block malformed fragments.
+
+22. ### Besides firewalls, what other devices are used to enforce network boundaries?
+
+    - Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS)
+    - Routers with access control lists (ACLs)
+    - Network Access Control (NAC) devices
+    - Honeypots and honeynets
+    - Security gateways
+
+23. ### What is a honeypot?
+
+    A honeypot is a decoy system or network set up to attract and detect attackers. It is used to study attack methods and gather intelligence about potential threats.
+
+24. ### What is the difference between an HIDS and a NIDS? Examples of both.
+
+    - **HIDS (Host-based Intrusion Detection System):** Monitors and analyzes the internals of a computing system. Example: OSSEC.
+    - **NIDS (Network-based Intrusion Detection System):** Monitors and analyzes network traffic for suspicious activities. Example: Snort.
+
+25. ### What is worse in detection, a false negative or a false positive? And why?
+
+    A **false negative** is worse because it means a real attack or threat has not been detected, leaving the system vulnerable. False positives, while disruptive, do not pose a direct threat to security.
+
+26. ### What is DDoS and DoS attack?
+
+    - **DoS (Denial of Service):** An attack intended to shut down a machine or network, making it inaccessible to its intended users by overwhelming it with traffic.
+    - **DDoS (Distributed Denial of Service):** A more severe form of DoS attack where multiple systems (often compromised) are used to flood the target with traffic.
+
+27. ### What do you understand by IP Subnetting?
+
+    IP subnetting is the process of dividing a larger network into smaller subnetworks (subnets) to improve network performance and manageability. Each subnet has a specific range of IP addresses.
+
+28. ### Explain NAT (Network Address Translation)?
+
+    NAT is a method used to map multiple private IP addresses to a single public IP address (or a few) to conserve the number of public IP addresses used. It provides security by hiding internal IP addresses from external networks.
+
+29. ### What is Port Forwarding? And how/why it is used?
+
+    Port forwarding is a technique used to redirect traffic from one IP address and port number combination to another. It is used to provide access to internal network services from an external network.
+
+30. ### What is VLAN?
+
+    A VLAN (Virtual Local Area Network) is a logical grouping of devices on a network that can communicate as if they were on the same physical LAN, regardless of their physical location. VLANs improve network efficiency and security.
+
+31. ### What Security Principle means a signed message came from the owner of the key that signed it? (non-repudiation, Integrity, authority, non-verifiability)
+
+    **Non-repudiation** ensures that a signed message came from the owner of the key that signed it, preventing the sender from denying the authenticity of their signature.
+
+32. ### What is ARP Poisoning?
+
+    ARP poisoning is a technique used by attackers to manipulate the ARP (Address Resolution Protocol) cache of network devices. By sending spoofed ARP messages, attackers can associate their MAC address with the IP address of another device, allowing them to intercept, modify, or disrupt traffic.
+
+-----------------
 
 ## Intermediate Level Questions
 
