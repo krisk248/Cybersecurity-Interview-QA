@@ -1460,40 +1460,211 @@ Note : Kindly dont pinpoint yet on hey this is patching or this is Application S
 
 Again, the questions here are not guessed, can be limitless, so just putting very basic ones. This does NOT pertains to like - Hey ! These are asked in Pentesting Interviews.
 
-1. How do you start about hacking a target ? What is Information Gathering, Enumeration ?
-1. What are phases of Network Penetration Testing ? (Cyber Kill Chain)
-2. What NMAP argument/flag in nmap tells about version ?
-3. What is difference in -v and -V in NMAP ?
-4. Can SQLi lead to RCE ?
-5. How do you erase tracks when hacked a machine ? consider it is linux.
-6. What is your opinion on Automated Pentesting ? vs Manual Pentesting ? Which one is better ?
-7. What is difference in Black-Box Pentesting vs White-Box Pentesting ?
-8. Any Purple Teaming Exercises done in past ? Explain.
-8. Have you done any Phishing assesments in past ? 
-9. How can you bypass Antivirus Detection ? Explain.
-10. How does EDR works ? How to bypass EDR Detections ? Explain.
-11. What is Supply Chain Attack ?
-12. Compromising a local account is easier or an AD account ? (Windows Context)
-13. How would you do Data Exfiltration if you hacked a machine ?
-14. have you worked on Nessus / Qualys before ?
-14. Any open source alternative of Nessus or Qualys ?
-14. What do you prefer ? Vulnerbaility Assessment of a machine with Credentials or without Credentials ?
-14. What are things to consider before doing Pentesting or Vulnerability Assesment of a targt ?
-14. Would you place the machine (server example Nessus) within the same Network of machines which is being tested or seperate ?
-14. Why or Why not will you whitelist the Source machine of attack in Penetration Testing or Vulnerability Assesement ?
-15. How do you rate Vulnerability ? Eplain scoring system or frameworks.
-16. Name some tools you use in Network Pentesting.
-17. How do you report Vulnerability or Security Gaps after pentesting ? (Report Writing)
-17. Do you work often with patching teams to report and get patched the vulnrable software or fixing security gaps ?
-18. What are some HTTP Status codes you monitor during pentest ? Explain some interesting ones.
-19. What is a 0-Day (Zero-Day) attack ?
-20. What is Sub-Domain Takeover. Explain.
-21. How can you detect presence of a WAF ( Web Application Firewall),( and which one) ?
-22. What is C2 Server (Command and Control) ?
-23. Mention some SSL/TLS related Vulnerabilities.
-24. Have you come across any recent Data Breach, explain how it happened . (and IR Part : How we can protect against the same ?)
-25. How does NMAP determines the Operating System of the target ?
-26. What is difference in Pass-the-Hash and Pass-the-Ticket ?
+1. ### How do you start about hacking a target? What is Information Gathering, Enumeration?
+
+    **Information Gathering:** The first step in hacking a target is to collect as much information as possible about the target. This includes gathering publicly available information (OSINT), using tools like Whois, DNS enumeration, and social engineering.
+
+    **Enumeration:** This involves active interaction with the target systems to discover additional details such as open ports, services running on those ports, usernames, and shared resources. Tools like Nmap and Netcat are commonly used.
+
+2. ### What are phases of Network Penetration Testing? (Cyber Kill Chain)
+
+    **Phases of Network Penetration Testing:**
+    - **Reconnaissance:** Gathering information about the target.
+    - **Scanning:** Identifying open ports and services.
+    - **Enumeration:** Extracting more detailed information from the target.
+    - **Exploitation:** Gaining access by exploiting vulnerabilities.
+    - **Post-Exploitation:** Maintaining access and gathering additional data.
+    - **Reporting:** Documenting findings and providing recommendations.
+
+3. ### What NMAP argument/flag in nmap tells about version?
+
+    **Flag:** `-sV`
+    - Example: `nmap -sV <target>`
+
+4. ### What is the difference in -v and -V in NMAP?
+
+    **-v:** Enables verbose output, providing more detailed information during the scan process.
+    **-V:** Displays the version of Nmap.
+
+5. ### Can SQLi lead to RCE?
+
+    **Yes:** SQL Injection (SQLi) can potentially lead to Remote Code Execution (RCE) if the injected SQL code allows execution of arbitrary commands on the underlying operating system.
+
+6. ### How do you erase tracks when hacked a machine? Consider it is Linux.
+
+    **Erasing Tracks:**
+    - **Clear Logs:** Delete or modify system logs (e.g., `/var/log/`).
+    - **History:** Clear command history (`history -c`).
+    - **Network Traces:** Remove evidence of network connections.
+    - **Files:** Delete temporary files and artifacts created during the attack.
+
+7. ### What is your opinion on Automated Pentesting vs Manual Pentesting? Which one is better?
+
+    **Automated Pentesting:** Fast and efficient for identifying known vulnerabilities using tools like Nessus and OpenVAS.
+    
+    **Manual Pentesting:** Provides deeper insights, creativity, and the ability to find complex vulnerabilities that automated tools might miss.
+
+    **Better Approach:** A combination of both is ideal. Automated tools for initial scanning and manual testing for thorough assessment.
+
+8. ### What is the difference in Black-Box Pentesting vs White-Box Pentesting?
+
+    **Black-Box Pentesting:** Testers have no prior knowledge of the target environment. Simulates an external attacker.
+
+    **White-Box Pentesting:** Testers have full knowledge of the target environment, including source code and network architecture. Simulates an insider attack.
+
+9. ### Any Purple Teaming Exercises done in the past? Explain.
+
+    **Purple Teaming:** A collaborative approach where Red Team (attackers) and Blue Team (defenders) work together to improve an organization's security posture. Red Team tests the defenses, while Blue Team actively defends and learns from the attack techniques.
+
+10. ### Have you done any Phishing assessments in the past?
+
+    **Phishing Assessments:** Involves creating simulated phishing campaigns to test the organization's awareness and response to phishing attacks. It includes crafting emails that lure users into clicking malicious links or divulging sensitive information.
+
+11. ### How can you bypass Antivirus Detection? Explain.
+
+    **Bypassing Antivirus:**
+    - **Obfuscation:** Modify the payload to evade signature-based detection.
+    - **Encryption:** Encrypt the payload and decrypt it in memory.
+    - **Polymorphic Code:** Change the code structure on each execution.
+    - **Living-off-the-land:** Use legitimate tools and scripts to perform malicious actions.
+
+12. ### How does EDR work? How to bypass EDR Detections? Explain.
+
+    **EDR (Endpoint Detection and Response):** Monitors endpoints for suspicious activities, logs, and detects potential threats using behavior analysis.
+
+    **Bypassing EDR:**
+    - **Process Injection:** Inject code into trusted processes.
+    - **Fileless Malware:** Operate entirely in memory to avoid detection.
+    - **Living-off-the-land:** Use built-in system tools to perform actions.
+
+13. ### What is a Supply Chain Attack?
+
+    **Supply Chain Attack:** An attack targeting the less-secure elements of a supply chain to compromise a target. It often involves injecting malicious code into software updates or hardware components.
+
+14. ### Compromising a local account is easier or an AD account? (Windows Context)
+
+    **Local Account:** Generally easier due to typically weaker security measures and fewer monitoring tools compared to Active Directory (AD) accounts, which are usually more heavily protected and monitored.
+
+15. ### How would you do Data Exfiltration if you hacked a machine?
+
+    **Methods:**
+    - **Network Transfer:** Use protocols like FTP, HTTP, or DNS tunneling.
+    - **Removable Media:** Copy data to USB drives.
+    - **Steganography:** Hide data within other files.
+    - **Email:** Send data via email.
+
+16. ### Have you worked on Nessus / Qualys before?
+
+    **Nessus / Qualys:** Both are widely used vulnerability scanners for identifying and assessing vulnerabilities in networks and systems.
+
+17. ### Any open-source alternative of Nessus or Qualys?
+
+    **Open Source Alternatives:**
+    - **OpenVAS**
+    - **Nmap**
+    - **OWASP ZAP**
+
+18. ### What do you prefer? Vulnerability Assessment of a machine with Credentials or without Credentials?
+
+    **With Credentials:** Provides a more comprehensive assessment by allowing deeper inspection of the system, identifying more vulnerabilities.
+
+19. ### What are things to consider before doing Pentesting or Vulnerability Assessment of a target?
+
+    **Considerations:**
+    - **Scope:** Define the boundaries and extent of testing.
+    - **Permissions:** Obtain necessary authorizations.
+    - **Impact:** Assess potential impact on operations.
+    - **Timing:** Schedule to minimize disruption.
+    - **Tools and Techniques:** Plan the tools and methods to be used.
+
+20. ### Would you place the machine (server example Nessus) within the same Network of machines which is being tested or separate?
+
+    **Separate Network:** To avoid potential impacts on the production environment and ensure the testing environment is isolated.
+
+21. ### Why or why not will you whitelist the Source machine of attack in Penetration Testing or Vulnerability Assessment?
+
+    **Whitelisting Source Machine:**
+    - **Pros:** Ensures the test traffic is not blocked, allowing comprehensive assessment.
+    - **Cons:** Might not reflect real-world scenarios where attackers are not whitelisted.
+
+22. ### How do you rate Vulnerability? Explain scoring system or frameworks.
+
+    **Scoring System:**
+    - **CVSS (Common Vulnerability Scoring System):** Provides a standardized way to assess the severity of vulnerabilities based on factors like exploitability and impact.
+    - **OWASP Risk Rating Methodology:** Evaluates risk based on factors like likelihood and impact.
+
+23. ### Name some tools you use in Network Pentesting.
+
+    **Tools:**
+    - **Nmap**
+    - **Metasploit**
+    - **Wireshark**
+    - **Burp Suite**
+    - **Nikto**
+
+24. ### How do you report Vulnerability or Security Gaps after pentesting? (Report Writing)
+
+    **Reporting:**
+    - **Executive Summary:** High-level overview of findings and recommendations.
+    - **Technical Details:** In-depth description of each vulnerability, including steps to reproduce, impact, and mitigation.
+    - **Screenshots and Logs:** Provide evidence of findings.
+    - **Remediation Plan:** Suggested actions to fix identified vulnerabilities.
+
+25. ### Do you work often with patching teams to report and get patched the vulnerable software or fixing security gaps?
+
+    **Collaboration:** Yes, regularly working with patching teams to ensure identified vulnerabilities are properly addressed and remediated.
+
+26. ### What are some HTTP Status codes you monitor during pentest? Explain some interesting ones.
+
+    **Status Codes:**
+    - **200 OK:** Successful request.
+    - **301 Moved Permanently:** Resource moved permanently.
+    - **401 Unauthorized:** Authentication required.
+    - **403 Forbidden:** Access denied.
+    - **404 Not Found:** Resource not found.
+    - **500 Internal Server Error:** Server encountered an error.
+
+27. ### What is a 0-Day (Zero-Day) attack?
+
+    **0-Day Attack:** An attack that exploits a previously unknown vulnerability, giving the vendor zero days to address and patch the issue.
+
+28. ### What is Sub-Domain Takeover. Explain.
+
+    **Sub-Domain Takeover:** Occurs when a sub-domain points to an external service that has been removed or is no longer in use, allowing an attacker to take control of the sub-domain by registering the service.
+
+29. ### How can you detect presence of a WAF (Web Application Firewall), and which one?
+
+    **Detection:**
+    - **Fingerprinting:** Analyze HTTP responses for headers and patterns specific to WAFs.
+    - **Tools:** Use tools like WAFW00f to detect and identify WAFs.
+
+30. ### What is a C2 Server (Command and Control)?
+
+    **C2 Server:** A server used by attackers to communicate with compromised machines, send commands, and receive stolen data.
+
+31. ### Mention some SSL/TLS related Vulnerabilities.
+
+    **Vulnerabilities:**
+    - **Heartbleed:** Exploits a flaw in OpenSSL, allowing data leakage.
+    - **POODLE:** Exploits weaknesses in SSL 3.0.
+    - **BEAST:** Exploits vulnerabilities in TLS 1.0.
+    - **Logjam:** Downgrade attack on Diffie-Hellman key exchange.
+
+32. ### Have you come across any recent Data Breach, explain how it happened. (and IR Part: How we can protect against the same?)
+
+    **Example:**
+    - **Capital One Data Breach (2019):** Exploited a misconfigured firewall to access sensitive data.
+    - **IR:** Regular security audits, proper configuration management, and timely patching.
+
+33. ### How does NMAP determine the Operating System of the target?
+
+    **OS Detection:** Nmap uses TCP/IP stack fingerprinting by analyzing responses to various probes and comparing them to its database of known fingerprints.
+
+34. ### What is the difference in Pass-the-Hash and Pass-the-Ticket?
+
+    **Pass-the-Hash:** Uses hashed passwords to authenticate without knowing the plaintext password.
+    **Pass-the-Ticket:** Uses Kerberos tickets (TGTs) to authenticate and access network resources without needing the password hash.
+
 
 
 
@@ -1550,19 +1721,126 @@ Again, the questions here are not guessed, can be limitless, so just putting ver
 34. What is STRIDE ?
 
 ### Mobile Application Pentesting
-24. What are some common Risks in Mobile Applications ?
-1. Describe Programatic ways to detect if iOS or Android device is jailbroken or rooted.
-2. Can SMS be used as a medium to perform SQL Injection on Android Application. Explain ?
-30. Which tool is (mostly*) used to hook into iOS application
-30. Which protection mechanism is used for distributing Apple iOS Application on iTunes store?
-31. What are different Obfuscators used to Protect Mobile Apps ?
-32. What are different ways for Mobile Application to store and Protect sensative data in Android and iOS. Recomend best practices. 
-31. Brief about the Security improvements in Recent (last 2) Android Releases.
-32. Mention different steps you would perform doing reverse engineering on an  iOS Application downloaded from iTunes Store.
-33. Consider that you have decompiled a Android Application, made changes to the code and apk design, Will you be able to install this repacked APK on a newly formatted Android device ? Why ? or Not ?
-34. Provide ADB command with example to fetch APK file from Android Device.
-35. Can Adnroid malware App Extract sqlite file of another app? How? Why?or Not ? Explain with any assumptions made .
-36. Explain different approaches of bypassing SSL Pinning in Android and iOS Applications.
+1. ### What are some common Risks in Mobile Applications?
+
+    **Common Risks:**
+    - **Insecure Data Storage:** Storing sensitive data without encryption.
+    - **Weak Server-Side Controls:** Insufficient security on the server side.
+    - **Insecure Communication:** Lack of encryption for data in transit.
+    - **Insecure Authentication and Authorization:** Weak or improperly implemented authentication mechanisms.
+    - **Client-Side Injection:** Vulnerabilities like SQL injection and code injection in the app.
+    - **Poor Code Quality:** Code vulnerabilities due to poor coding practices.
+    - **Improper Session Handling:** Insecure session management practices.
+    - **Insufficient Logging and Monitoring:** Lack of proper logging for security events.
+    - **Insecure Third-Party Libraries:** Use of vulnerable or outdated libraries.
+
+2. ### Describe Programmatic ways to detect if iOS or Android device is jailbroken or rooted.
+
+    **iOS Jailbreak Detection:**
+    - **Check for Jailbreak Files:** Look for files like `/Applications/Cydia.app`, `/Library/MobileSubstrate/MobileSubstrate.dylib`.
+    - **Check for OpenSSH:** Attempt to connect to SSH service running on the device.
+    - **System Call Checks:** Verify if sandbox restrictions are lifted using system calls.
+    
+    **Android Root Detection:**
+    - **Check for Root Files:** Look for files like `/system/xbin/su`, `/system/bin/su`.
+    - **Check for BusyBox:** Presence of BusyBox installation.
+    - **System Properties:** Check for system properties indicating root.
+    - **Execute Commands:** Attempt to execute root commands like `su`.
+
+3. ### Can SMS be used as a medium to perform SQL Injection on Android Application? Explain.
+
+    **Yes:** If an Android application processes SMS messages and directly incorporates SMS content into SQL queries without proper validation and sanitization, it can be susceptible to SQL injection attacks.
+
+4. ### Which tool is (mostly*) used to hook into iOS application?
+
+    **Tool:** Frida
+    - **Frida:** A dynamic instrumentation toolkit for developers, reverse-engineers, and security researchers. It allows you to inject custom scripts into black box processes.
+
+5. ### Which protection mechanism is used for distributing Apple iOS Application on iTunes store?
+
+    **Protection Mechanism:** Digital Rights Management (DRM)
+    - **DRM:** Apple uses DRM to protect applications distributed through the iTunes Store, ensuring only authorized users can install and run the apps.
+
+6. ### What are different Obfuscators used to Protect Mobile Apps?
+
+    **Obfuscators:**
+    - **ProGuard:** Commonly used for Android applications.
+    - **DexGuard:** Advanced version of ProGuard for Android.
+    - **R8:** Google's replacement for ProGuard in Android.
+    - **iXGuard:** Used for iOS applications.
+    - **JSCObfuscator:** For JavaScript code used in hybrid mobile apps.
+
+7. ### What are different ways for Mobile Application to store and Protect sensitive data in Android and iOS? Recommend best practices.
+
+    **Android:**
+    - **Encrypted Shared Preferences:** Securely store key-value pairs.
+    - **SQLCipher:** Encrypt SQLite database.
+    - **Keystore System:** Store cryptographic keys securely.
+    
+    **iOS:**
+    - **Keychain Services:** Securely store passwords and keys.
+    - **Data Protection API:** Encrypt files on disk.
+
+    **Best Practices:**
+    - **Encryption:** Use strong encryption algorithms.
+    - **Secure Storage APIs:** Utilize platform-provided secure storage mechanisms.
+    - **Minimize Data Storage:** Store only essential data.
+    - **Regular Updates:** Keep libraries and frameworks up-to-date.
+
+8. ### Brief about the Security improvements in Recent (last 2) Android Releases.
+
+    **Recent Security Improvements:**
+    - **Scoped Storage:** Limits access to external storage.
+    - **BiometricPrompt API:** Enhanced biometric authentication.
+    - **Background Location Access:** Restricts location access in background.
+    - **Security Updates via Google Play:** Faster security patch deployment.
+    - **Enhanced Permissions:** Improved permission management for apps.
+
+9. ### Mention different steps you would perform doing reverse engineering on an iOS Application downloaded from iTunes Store.
+
+    **Steps:**
+    - **Extract IPA:** Download and extract the IPA file.
+    - **Decrypt Binary:** Use a tool like `frida-ios-dump` to decrypt the binary.
+    - **Class Dump:** Use `class-dump` to generate class headers.
+    - **Disassemble Binary:** Use a disassembler like Hopper or IDA Pro.
+    - **Analyze Code:** Review the disassembled code to understand app logic.
+    - **Dynamic Analysis:** Use tools like Frida for runtime analysis and hooking.
+
+10. ### Consider that you have decompiled an Android Application, made changes to the code and apk design. Will you be able to install this repacked APK on a newly formatted Android device? Why or Why not?
+
+    **No:** Because the original APK's signature would be invalidated after modification. Android devices enforce signature verification, and without a valid signature, the APK cannot be installed. You would need to sign the APK with a valid developer key.
+
+11. ### Provide ADB command with example to fetch APK file from Android Device.
+
+    **Command:**
+    ```bash
+    adb shell pm list packages -f    # Lists all installed packages with their paths
+    adb pull /data/app/com.example.app-1/base.apk ./app.apk  # Fetch the APK file
+    ```
+
+12. ### Can Android malware App extract sqlite file of another app? How? Why? or Not? Explain with any assumptions made.
+
+    **No:** By default, Android enforces strict sandboxing, preventing apps from accessing each other's data directories, including SQLite databases. However, if the device is rooted or if there are vulnerabilities in the OS, it might be possible.
+
+13. ### Explain different approaches of bypassing SSL Pinning in Android and iOS Applications.
+
+    **Bypassing SSL Pinning:**
+    - **Android:**
+        - **Frida:** Use Frida scripts to hook SSL functions and bypass pinning checks.
+        - **Xposed Framework:** Modules like `JustTrustMe` can disable pinning.
+    - **iOS:**
+        - **Frida:** Similar to Android, use Frida scripts for bypassing.
+        - **Objection:** Dynamic instrumentation to bypass SSL pinning.
+    - **Common Methods:**
+        - **Code Modification:** Decompile the app, modify the pinning logic, and recompile.
+        - **Proxy Tools:** Use tools like Burp Suite with SSL Unpinning plugins.
+
+14. ### How do you start about hacking a target? What is Information Gathering, Enumeration?
+
+    **Information Gathering:** The first step in hacking a target is to collect as much information as possible about the target. This includes gathering publicly available information (OSINT), using tools like Whois, DNS enumeration, and social engineering.
+
+    **Enumeration:** This involves active interaction with the target systems to discover additional details such as open ports, services running on those ports, usernames, and shared resources. Tools like Nmap and Netcat are commonly used.
+
 
 ## Cloud Pentesting or Security
 
