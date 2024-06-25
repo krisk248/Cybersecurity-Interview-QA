@@ -1670,26 +1670,152 @@ Again, the questions here are not guessed, can be limitless, so just putting ver
 
 ## Application Security
 
-1. Heard of OWASP ? What is it ? name some Vulnerabilities from OWASP-T10.
-1. What is Vulnerability Assesment, Pentesting , and Red teaming. Differences ?
-2. How do you handle Brute Forcing on your application ?
-3. What is Authentication and Authorization ? 
-4. What is Steteful and Steteless in HTTP context ?
-4. How does HTTP handles state ?
-5. What is Cross Site Scripting ? 
-6. What is difference in stored , reflected, and DOM XSS ?
-7. Which of the XSS attacks are hard to detetct and why ?
-7. What is the defense against XSS ? Remidiation. 
-6. Do you prefer black-listing approach or whitelisting approach ? and Why ?
-7. What is CSRF ? Impact ? and Remidiation ?
-8. When investigating CSRF Attack , wat are the things you will look for ?
-8. Can you perform CSRF attack if HTTP method is PUT considering there is no CSRF Prevention, Explain?
-9. How do you determine if the Website is hosted on IIS or Apache or Nginix or whatever server stack ?
-10. What is SQL Injection ?
-11. Name some Types of SQL Injection Vulnerability. 
-11. Explain Union Based SQL Injection.
-11. Explain Time Based SQL Injection.
-11. Explain Blind SQL Injection.
+1. ### Heard of OWASP? What is it? Name some Vulnerabilities from OWASP-T10.
+
+    **OWASP:** The Open Web Application Security Project (OWASP) is a nonprofit organization focused on improving the security of software. OWASP provides free resources and tools, including the OWASP Top Ten, which is a regularly updated list of the top ten web application security risks.
+
+    **OWASP Top Ten Vulnerabilities:**
+    - Injection (e.g., SQL, NoSQL, OS, and LDAP Injection)
+    - Broken Authentication
+    - Sensitive Data Exposure
+    - XML External Entities (XXE)
+    - Broken Access Control
+    - Security Misconfiguration
+    - Cross-Site Scripting (XSS)
+    - Insecure Deserialization
+    - Using Components with Known Vulnerabilities
+    - Insufficient Logging and Monitoring
+
+2. ### What is Vulnerability Assessment, Pentesting, and Red Teaming? Differences?
+
+    **Vulnerability Assessment:** A process to identify, quantify, and prioritize vulnerabilities in a system. It is usually automated and involves scanning systems to find potential security weaknesses.
+
+    **Pentesting (Penetration Testing):** A simulated cyber attack against your system to check for exploitable vulnerabilities. It involves manual and automated techniques and aims to exploit identified vulnerabilities.
+
+    **Red Teaming:** A full-scope, multi-layered attack simulation designed to measure how well an organization's people, networks, applications, and physical security controls can withstand an attack from a real-life adversary. It involves using tactics, techniques, and procedures (TTPs) of real-world attackers.
+
+3. ### How do you handle Brute Forcing on your application?
+
+    **Handling Brute Forcing:**
+    - **Account Lockout Policies:** Temporarily lock accounts after a certain number of failed login attempts.
+    - **CAPTCHAs:** Implement CAPTCHAs to distinguish between human and automated login attempts.
+    - **Rate Limiting:** Limit the number of login attempts from a single IP address.
+    - **Multi-Factor Authentication (MFA):** Add an extra layer of security to ensure that even if passwords are compromised, the account remains secure.
+    - **Logging and Monitoring:** Monitor and log failed login attempts and take action when suspicious activity is detected.
+
+4. ### What is Authentication and Authorization?
+
+    **Authentication:** The process of verifying the identity of a user or system. It confirms that the user is who they claim to be, typically through credentials like passwords, biometrics, or tokens.
+
+    **Authorization:** The process of determining what an authenticated user or system is allowed to do. It controls access to resources based on permissions, roles, or policies.
+
+5. ### What is Stateful and Stateless in HTTP context?
+
+    **Stateful:** In a stateful protocol, the server retains information about the client across multiple requests. Each request is aware of previous interactions, allowing for a more continuous experience.
+
+    **Stateless:** In a stateless protocol, each request from a client to the server must contain all the information needed to understand and complete the request. The server does not store any state information between requests.
+
+6. ### How does HTTP handle state?
+
+    **HTTP Handling State:**
+    - **Cookies:** Small pieces of data stored on the client-side and sent with each request to maintain state between the client and server.
+    - **Sessions:** Server-side storage of state information, usually identified by a session ID passed between the client and server via cookies or URL parameters.
+    - **Local Storage/Session Storage:** Client-side storage mechanisms provided by web browsers to store state information persistently (local storage) or temporarily (session storage).
+
+7. ### What is Cross-Site Scripting (XSS)?
+
+    **Cross-Site Scripting (XSS):** A type of security vulnerability typically found in web applications. XSS allows attackers to inject malicious scripts into web pages viewed by other users. These scripts can hijack user sessions, deface websites, or redirect users to malicious sites.
+
+8. ### What is the difference in stored, reflected, and DOM XSS?
+
+    **Stored XSS:** The malicious script is permanently stored on the target server (e.g., in a database). When a user requests the data, the script is delivered as part of the response and executed by the user's browser.
+
+    **Reflected XSS:** The malicious script is reflected off a web server. The script is included in the URL or form data sent to the server and is reflected back in the server's response, executed by the user's browser.
+
+    **DOM XSS:** The malicious script is executed as a result of modifying the DOM environment in the browser. The attack is executed on the client side by manipulating the DOM, rather than from the server's response.
+
+9. ### Which of the XSS attacks are hard to detect and why?
+
+    **DOM XSS:** DOM-based XSS attacks are harder to detect because they do not involve the server in delivering the malicious payload. The attack is entirely client-side, often making it more difficult to identify through traditional server-side scanning and logging mechanisms.
+
+10. ### What is the defense against XSS? Remediation.
+
+    **Defense Against XSS:**
+    - **Input Validation:** Ensure all input data is validated and sanitized.
+    - **Output Encoding:** Encode output data to prevent execution of malicious scripts.
+    - **Content Security Policy (CSP):** Use CSP headers to restrict the sources of content that can be loaded by the browser.
+    - **Use of Security Libraries:** Implement security libraries and frameworks that provide built-in XSS protection.
+
+11. ### Do you prefer black-listing approach or whitelisting approach? and Why?
+
+    **Whitelisting:** It is generally preferred because it defines a specific set of allowed inputs, blocking everything else by default. This is more secure than black-listing, which only defines what is not allowed, potentially leaving gaps for unanticipated malicious inputs.
+
+12. ### What is CSRF? Impact? and Remediation?
+
+    **CSRF (Cross-Site Request Forgery):** An attack that tricks a user into executing unwanted actions on a web application in which they are authenticated. It can result in unauthorized actions being performed on behalf of the user.
+
+    **Impact:** Can lead to unauthorized data modification, fund transfers, or other unwanted actions executed without the user's consent.
+
+    **Remediation:**
+    - **CSRF Tokens:** Include unique, unpredictable tokens in forms and verify them on the server side.
+    - **SameSite Cookies:** Use the `SameSite` attribute in cookies to prevent them from being sent with cross-site requests.
+    - **Double Submit Cookies:** Use a combination of cookies and tokens to verify requests.
+
+13. ### When investigating CSRF Attack, what are the things you will look for?
+
+    **Investigation Steps:**
+    - **Session Management:** Review how sessions are handled and maintained.
+    - **CSRF Tokens:** Check for the presence and validation of CSRF tokens in forms and requests.
+    - **Referrer Validation:** Ensure referrer headers are being checked for legitimacy.
+    - **User Interaction:** Confirm if actions require user interaction (e.g., clicking a button).
+
+14. ### Can you perform CSRF attack if HTTP method is PUT considering there is no CSRF Prevention? Explain?
+
+    **Yes:** CSRF attacks can be performed using any HTTP method, including PUT, if there is no CSRF prevention mechanism in place. If an attacker can trick a user into making a PUT request (e.g., through a malicious script or social engineering), the attack can succeed.
+
+15. ### How do you determine if the Website is hosted on IIS or Apache or Nginix or whatever server stack?
+
+    **Determination Methods:**
+    - **HTTP Headers:** Examine HTTP response headers. Different servers have unique headers (e.g., `Server: Apache`).
+    - **Error Pages:** Review default error pages that may contain server-specific information.
+    - **Web Fingerprinting Tools:** Use tools like `Wappalyzer` or `Netcraft` for server identification.
+    - **Banner Grabbing:** Use `nmap` with `-sV` flag to grab service banners.
+
+16. ### What is SQL Injection?
+
+    **SQL Injection:** A code injection technique that exploits a vulnerability in an application's software by manipulating SQL queries. It allows attackers to interfere with the queries that an application makes to its database, potentially leading to unauthorized data access or modification.
+
+17. ### Name some Types of SQL Injection Vulnerability.
+
+    **Types of SQL Injection:**
+    - **Union-Based SQL Injection**
+    - **Error-Based SQL Injection**
+    - **Boolean-Based Blind SQL Injection**
+    - **Time-Based Blind SQL Injection**
+    - **Out-of-Band SQL Injection**
+
+18. ### Explain Union Based SQL Injection.
+
+    **Union-Based SQL Injection:** This type of injection leverages the `UNION` SQL operator to combine the results of two or more SELECT queries into a single result. An attacker can use this technique to extract data from other tables in the database by merging their results with the original query.
+
+    **Example:**
+    ```sql
+    SELECT name, email FROM users WHERE id = 1 UNION ALL SELECT username, password FROM admin;
+    ```
+
+19. ### Explain Time-Based SQL Injection.
+
+    **Time-Based SQL Injection:** This technique involves sending a query to the database that forces it to delay its response for a specific amount of time. It is a type of blind SQL injection used when an application does not display error messages but behaves differently based on query results.
+
+    **Example:**
+    ```sql
+    SELECT * FROM users WHERE id = 1 AND IF(1=1, SLEEP(5), 0);
+    ```
+
+20. ### Explain Blind SQL Injection.
+
+    **Blind SQL Injection:** This occurs when an application is vulnerable to SQL injection but does not display error messages or the results
+
 12. How do you protect against SQLi ?
 13. What is Prepared Statements and Paramatrized Query ? (in Context of SQLi)
 13. What is 2nd-Order-SQLi ?
